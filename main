@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title> Real Time Editor </title>
+        <script>
+            function refresh(){
+               // document.write(0);
+                var textContent = document.getElementById('editor-textarea').value;
+                document.getElementById('viewer').srcdoc = textContent;
+            }
+            
+           
+        </script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                
+            }
+            .main {
+                background: #485460;
+                width: 100%;
+                height: 100%;
+                display: inline-flex;
+                overflow: hidden;
+                
+            }
+            #viewer {
+                background: white;
+                border: none;
+                width: 100%;
+                height: 95%;
+                margin: 10px;
+                border: 1px solid #808e9b;
+            }
+            #editor-textarea {
+                background: #1e272e;
+                color: #2ecc71;
+                border: none;
+                width: 100%;
+                height: 95%;
+                margin: 10px;
+                
+                font-size: 14px;
+                border: 1px solid #808e9b;
+                
+            }
+            textarea {
+                padding: 10px;
+                margin: 10px;
+            }
+            #header {
+                width: 100%;
+                color: #ccae62;
+                background: #485460;
+                font-size: 40px;
+                padding: 27px;
+                font-family: monospace;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="header">CODE HAVEN</div>
+        <div class="main">
+            <textarea id="editor-textarea" onkeyup="refresh()" placeholder="Code Here..."></textarea>
+            <iframe id="viewer"></iframe>
+           <!-- <input type="button" value="Run" onClick="refresh()"/>-->
+        </div>
+    </body>
+</html>
